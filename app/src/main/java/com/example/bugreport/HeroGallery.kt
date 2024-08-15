@@ -136,7 +136,7 @@ private fun SlidingImage(
         with(scrollState) {
             scrollTo(rightPosition)
             if (shouldScroll) {
-                Log.d("bugreportDebug", "START scrollState.value: ${scrollState.value}  rightPosition: $rightPosition  animationDuration: $animationDuration")
+                Log.d("bugreportDebug", "START scrollState.value: ${scrollState.value}  rightPosition: $rightPosition  leftPosition: $leftPosition  animationDuration: $animationDuration")
 
                 animateScrollTo(
                     value = leftPosition,
@@ -146,7 +146,9 @@ private fun SlidingImage(
                         LinearEasing
                     )
                 )
-                Log.d("bugreportDebug", "END scrollState.value: ${scrollState.value}  rightPosition: $rightPosition  animationDuration: $animationDuration")
+                
+                Log.d("bugreportDebug", "END scrollState.value: ${scrollState.value}  rightPosition: $rightPosition  leftPosition: $leftPosition  animationDuration: $animationDuration")
+                
                 if (scrollState.value != rightPosition) {
                     scrollFinished()
                 }
